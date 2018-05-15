@@ -17,4 +17,13 @@ class Api::V1::BaseController < ActionController::Base
     end
     render json: response, status: :internal_server_error
   end
+
+  def success_message
+    render json: { message: "Success"}
+  end
+
+  def error_message(object)
+    render json: { errors: object.error.messages }
+  end
+
 end

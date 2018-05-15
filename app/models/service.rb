@@ -5,6 +5,6 @@ class Service < ApplicationRecord
   include PgSearch
 
   pg_search_scope :search_by_keyword, against: [:name, :description], associated_against: {
-    user: :nickname
+    user: :username
   }
 end

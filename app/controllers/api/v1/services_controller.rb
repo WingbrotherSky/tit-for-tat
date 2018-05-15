@@ -11,15 +11,15 @@ class Api::V1::ServicesController < Api::V1::BaseController
   def create
     @service = Service.new(service_params)
     if @service.save
-      render json: { message: "Service created" }
+      success_messsage
     else
-      render json: { errors: @service.errors.messages }
+      error_message(@service)
     end
   end
 
   def update
     if Service.update(service_params)
-      render json: { message: "Service updated" }
+      success_messsage
     else
       render json: { errors: "Service could not be updated" }
     end
@@ -28,9 +28,9 @@ class Api::V1::ServicesController < Api::V1::BaseController
   def destroy
     @service = Service.find(params[:id])
     if @service.destroy
-      render json: { message: "Service destroyed" }
+      success_messsage
     else
-      render json: { errors: @json.errors.messages }
+      error_message(@service)
     end
   end
 

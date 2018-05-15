@@ -60,3 +60,5 @@ gem 'faker'
 
 # Restclient
 gem 'rest-client'
+# Search functionality
+gem 'pg_search'

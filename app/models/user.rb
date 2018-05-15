@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-  has_many :services, :contracts
+  has_many :services
+  has_many :contracts
 end

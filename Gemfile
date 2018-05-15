@@ -57,3 +57,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Fake data
 gem 'faker'
+
+# Restclient
+gem 'rest-client'
+# Search functionality
+gem 'pg_search'

@@ -15,4 +15,9 @@ class Api::V1::ServicesController < Api::V1::BaseController
   def update
 
   end
+
+  def destroy
+
+  end
+
 end

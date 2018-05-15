@@ -7,6 +7,7 @@ class Service < ApplicationRecord
   pg_search_scope :search_by_keyword, against: [:name, :description], associated_against: {
     user: :username
   }, :using => {
-                    :tsearch => {:prefix => true}
+                    :tsearch => {:prefix => true,
+                                  dictionary: "simple"}
                   }
 end

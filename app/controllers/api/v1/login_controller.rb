@@ -20,7 +20,6 @@ class Api::V1::LoginController < Api::V1::BaseController
   end
 
   def wechat_user
-    p 'calling tencent'
     @wechat_response ||= RestClient.post(URL, wechat_params)
     @wechat_user ||= JSON.parse(@wechat_response.body)
   end

@@ -4,6 +4,7 @@ class Api::V1::LoginController < Api::V1::BaseController
   def login
     @user = User.where(openid: wechat_user.fetch('openid')).first_or_initialize
     unless @user.id
+      @user.save
       @user.username = "User#{@user.id}"
       @user.save
     end

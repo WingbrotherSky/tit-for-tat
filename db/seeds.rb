@@ -12,7 +12,7 @@ User.destroy_all
 
 
 100.times do
-  @user = User.new( openid: (0..1000).to_a.sample, username: Faker::RickAndMorty.character )
+  @user = User.new( openid: (0..1000).to_a.sample, username: Faker::RickAndMorty.character, bio: Faker::RickAndMorty.quote )
   @user.save
   @service = Service.new(name: Faker::RickAndMorty.character, user_id: @user.id, description: Faker::FamilyGuy.quote, image:Faker::Seinfeld.character)
   @service.save

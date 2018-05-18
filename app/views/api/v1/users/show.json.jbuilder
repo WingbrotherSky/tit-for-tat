@@ -1,5 +1,6 @@
 json.id @user.id
 json.username @user.username
+json.bio @user.bio
 
 json.services do
   json.array! @user.services do |service|

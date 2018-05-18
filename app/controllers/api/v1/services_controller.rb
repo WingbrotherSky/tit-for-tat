@@ -11,7 +11,7 @@ class Api::V1::ServicesController < Api::V1::BaseController
   def create
     @service = Service.new(service_params)
     if @service.save
-      success_messsage
+      render json: { userId: @service.user.id }
     else
       error_message(@service)
     end

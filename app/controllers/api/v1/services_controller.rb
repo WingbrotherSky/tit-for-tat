@@ -10,10 +10,14 @@ class Api::V1::ServicesController < Api::V1::BaseController
 
   def create
     @service = Service.new(service_params)
-    if @service.save
-      render json: { userId: @service.user.id }
+    unless service.user.services.count == 3
+      if @service.save
+        render json: { userId: @service.user.id }
+      else
+        error_message(@service)
+      end
     else
-      error_message(@service)
+      render json: { errors: "User cannot have more than 3 services"}
     end
   end
 
